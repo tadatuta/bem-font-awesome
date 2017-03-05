@@ -15,7 +15,7 @@ if (!fs.existsSync(path.join('fa', '_icon'))) {
 
 const selectorRegexp = /\.fa\-(.+)\:before/; // .fa-clock-o:before
 
-const css = fs.readFileSync('node_modules/font-awesome/css/font-awesome.css', 'utf8');
+const css = fs.readFileSync(path.join(faSourceFolder, 'css', 'font-awesome.css'), 'utf8');
 
 const fa = postcss.plugin('fa', function(options = {}) {
     return function(css) {
