@@ -6,8 +6,12 @@ const mv = require('mv');
 const faSourceFolder = path.join('node_modules', 'font-awesome');
 
 mv(path.join(faSourceFolder, 'fonts'), path.join(__dirname, 'fonts'), err => {
-    if (err.code !== 'ENOENT') console.error(err);
+    if (err && err.code !== 'ENOENT') console.error(err);
 });
+
+if (!fs.existsSync(path.join('fa', '_icon'))) {
+    fs.mkdirSync(path.join('fa', '_icon'));
+}
 
 const selectorRegexp = /\.fa\-(.+)\:before/; // .fa-clock-o:before
 
