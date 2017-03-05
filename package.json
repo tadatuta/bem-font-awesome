@@ -1,0 +1,27 @@
+{
+  "name": "bem-font-awesome",
+  "version": "1.0.0",
+  "description": "BEM port of Font Awesome",
+  "main": "generate.js",
+  "scripts": {
+    "build": "node generate",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "fa",
+    "fonts"
+  ],
+  "keywords": [
+    "bem",
+    "font awesome",
+    "fa"
+  ],
+  "author": "Vladimir Grinenko <i@tadatuta.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "mv": "^2.1.1",
+    "postcss": "^5.2.15"
+  }
+}
