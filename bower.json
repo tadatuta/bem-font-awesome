@@ -1,0 +1,24 @@
+{
+  "name": "bem-font-awesome",
+  "description": "BEM port of Font Awesome",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tadatuta/bem-font-awesome.git"
+  },
+  "homepage": "https://github.com/tadatuta/bem-font-awesome",
+  "main": "",
+  "keywords": [
+    "bem",
+    "components",
+    "icons",
+    "font awesome",
+    "fa"
+  ],
+  "ignore": [
+    "*",
+    "!fa/**",
+    "!fonts/**",
+    "!*.md",
+    "!LICENSE.txt"
+  ]
+}
