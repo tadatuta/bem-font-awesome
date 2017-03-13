@@ -34,5 +34,5 @@ You're done :)
 
 ### HTML
 ```html
-<div class="fa fa_icon_500px"></div>
+<span class="fa fa_icon_500px"></span>
 ```

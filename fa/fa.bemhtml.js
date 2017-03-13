@@ -1,0 +1,1 @@
+block('fa').tag()('span');
