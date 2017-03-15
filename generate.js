@@ -20,22 +20,26 @@ const css = fs.readFileSync(path.join(faSourceFolder, 'css', 'font-awesome.css')
 const fa = postcss.plugin('fa', function(options = {}) {
     return function(css) {
         css.walkRules(function(rule) {
-            const parsedSelector = selectorRegexp.exec(rule.selector);
-            if (!parsedSelector) return;
+            const selectors = rule.selector.split(',');
 
-            const modVal = parsedSelector[1];
+            selectors.forEach(selector => {
+                const parsedSelector = selectorRegexp.exec(selector);
+                if (!parsedSelector) return;
 
-            const result = [
-                '.fa_icon_' + modVal + ':before {'
-            ];
+                const modVal = parsedSelector[1];
 
-            rule.walkDecls(function(decl, i) {
-                result.push(decl.raws.before + '  ' + decl.prop + decl.raws.between + decl.value + ';');
+                const result = [
+                    '.fa_icon_' + modVal + ':before {'
+                ];
+
+                rule.walkDecls(function(decl, i) {
+                    result.push(decl.raws.before + '  ' + decl.prop + decl.raws.between + decl.value + ';');
+                });
+
+                result.push('\n}');
+
+                fs.writeFileSync(path.join('fa', '_icon', 'fa_icon_' + modVal + '.css'), result.join(''));
             });
-
-            result.push('\n}');
-
-            fs.writeFileSync(path.join('fa', '_icon', 'fa_icon_' + modVal + '.css'), result.join(''));
         });
     }
 });
