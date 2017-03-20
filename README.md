@@ -2,6 +2,8 @@
 
 BEM port of [Font Awesome](http://fontawesome.io).
 
+See also [bem-font-awesome-icons](https://github.com/tadatuta/bem-font-awesome-icons) — Font Awesome icons extracted as SVG and provided via backgrounds or BEMHTML/BH tempaltes so no font required and only needed icons will be used.
+
 ## Content
 ```
 fa/
